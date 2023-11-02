@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .cake img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 160px;
+            height: 140px;
+            animation: cakeflash 3s linear forwards;
+        }
+        .blessing img{
+            position: absolute;
+            /* display: none; */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 200px;
+            height: 100px;
+            opacity: 0;
+            animation: blessingflash 8s 3s linear forwards;
+        }
+        /* .cake img:hover{
+            width: 800px;
+            height: 700px;
+            transition: all 2s;
+        } */
+        @keyframes cakeflash {
+            0%{
+                width: 160px;
+                height: 140px;
+                opacity: 1;
+            }
+            99%{
+                opacity: 1;
+            }
+            100%{
+                width: 800px;
+                height: 700px;
+                opacity: 0;
+                display: none;
+            }
+
+        }
+        @keyframes blessingflash {
+            0%{
+                opacity: 1;
+                display: block;
+                width: 200px;
+                height: 100px;
+            }
+            100%{
+                width: 1000px;
+                height: 500px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cake">
+        <img src="./生日蛋糕.jpg" alt="">
+        
+    </div>
+    <div class="blessing">
+        <img src="./生日快乐.jpg" alt="">
+    </div>
+
+    <script>
+        const imgcake = document.querySelector('.cake img')
+        const p = document.querySelector('.cake p')
+        console.log(imgcake.style);
+        
+        p.addEventListener('click',function(){
+            p.style.color = 'pink'
+            const a = p.style.color
+            if(a === 'pink'){
+                console.log('001');
+            }
+        })
+    </script>
+</body>
+</html>
